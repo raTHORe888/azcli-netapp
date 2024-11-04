@@ -14,6 +14,7 @@ GROW_POOL_SIZE=6
 VOL1_NAME="vol1"
 VOL2_NAME="vol2"
 SERVICE_LEVEL="Standard" 
+NETWORK_TYPE="Standard"
 PROTOCOL_TYPE_NFS="NFSv3"
 PROTOCOL_TYPE_SMB="CIFS"
 VNET_NAME="vnet-we-anf-lab"
@@ -64,6 +65,7 @@ az netappfiles volume create \
     --service-level $SERVICE_LEVEL \
     --vnet $VNET_NAME \
     --subnet $SUBNET_NAME \
+    --network-features $NETWORK_TYPE \
     --usage-threshold $VOL1_SIZE_GiB \
     --file-path $VOL1_UNIQUE_FILE_PATH \
     --protocol-types $PROTOCOL_TYPE_NFS
